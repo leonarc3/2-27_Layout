@@ -13,6 +13,8 @@ header.page {
     padding:10px;
     border:1px solid #000;
     text-align:center;
+    background-color: rgb(150,0,0);
+    color: #999999;
 }
 
 #wrapper nav li {
@@ -33,7 +35,8 @@ a:active {color:#999900;}
 
 article {
     width:275px;
-    margin:10px'
+    margin:10px;
+    background-color: rgb(250,100,100);
 }
 
 aside li {
