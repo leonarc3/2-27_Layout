@@ -1,5 +1,6 @@
 * {
     font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(0,0,0);
 }
 
 #wrapper {
@@ -25,6 +26,7 @@ header.page {
 }
 
 article, aside {
+    text-align:center;
     float:left;
 }
 
@@ -36,7 +38,7 @@ a:active {color:#999900;}
 article {
     width:610px;
     margin:10px;
-    background-color: rgb(250,100,100);
+    background-color: rgb(20,0,10);
 }
 
 aside li {
@@ -46,50 +48,49 @@ aside li {
 footer {
     clear:left;
     border:1px solid #000;
+    color: #999999;
 }
 
 @media screen and (max-width: 960px) {
-	
-	#wrapper {
-		width: 94%;
-	}
-	article {
-		width: 65%;
-	}
-	aside {
-		width: 28%;
-	}
+
+#wrapper {
+width: 94%;
+}
+article {
+width: 65%;
+}
+aside {
+width: 28%;
+}
 
 }
 
 /* for 700px or less */
 @media screen and (max-width: 700px) {
 
-	article {
-		width: auto;
-		float: none;
-	}
+article {
+width: auto;
+float: none;
+}
     
-	aside {
-		width: auto;
-		float: none;
-	}
+aside {
+width: auto;
+float: none;
+}
 
 }
 
 /* for 480px or less */
 @media screen and (max-width: 480px) {
 
-	header.page {
-		height: auto;
-	}
-	h1 {
-		font-size: 24px;
-	}
-	aside {
-		display: none;
-	}
-
+header.page {
+height: auto;
+}
+h1 {
+font-size: 24px;
+}
+aside {
+display: none;
 }
 
-
+}
