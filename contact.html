@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <title>Feedback Form</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Basic Feedback Form for My Site">
-<meta name="author" content="thomesoni@gmail.com">
+<meta name="description" content="Feedback form for My Site">
+<meta name="author" content="leonarc3@tcmj.edu">
 
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
 <style>
@@ -36,13 +37,14 @@ article {
 <div class="container">
 	<div class="row">
 		<header class="col-md-12">
-			<h1>Feedback Form</h1>
+			<h1>Contact Us</h1>
 		</header>
 	</div>
-
+	
 	<div class="row">
 		<article class="col-md-12">
-			<form action="mailto:cameron.leonard1@gmail.com" method="post" enctype="text/plain">
+			<p class="message"></p>
+			<form action="http://www.tcnj.edu/~leonarc3/jsonpform2email.php">
 				<div class="form-group">
 					<label>From</label>
 					<input class="form-control" type="text" name="from"  placeholder="Enter email">
@@ -60,7 +62,7 @@ article {
 
 		</article>
 	</div>
-
+	
 	<div class="row">
 		<footer></footer>
 	</div>
@@ -69,5 +71,32 @@ article {
 <script src="https://code.jquery.com/jquery.js"></script>
 <!-- Latest compiled and minified JavaScript -->
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
+<script>
+
+/* jsonp form to email function */
+$('form').submit(function() {
+  var url = $(this).attr("action");
+  var params = $(this).serialize();
+  
+  $.getJSON(url + '?' + params + "&callback=?", function(data) {
+   
+	switch(data[0].status){
+		case 'success':
+			$('.message').addClass("text-success").html('Thank you, <strong>' + data[0].from + '</strong>, for contacting us!');
+			$('form')[0].reset();
+			break;
+		case 'invalid email':
+			$('.message').removeClass("text-success").addClass("text-danger").html('Please provide a valid email address!');
+			break;
+		case 'failed to send':
+			$('.message').removeClass("text-success").addClass("text-danger").html('Failed to send email.');
+			break;
+	}
+  });
+  return false;
+});
+
+</script>
 </body>
 </html>
