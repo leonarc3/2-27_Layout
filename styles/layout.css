@@ -1,6 +1,7 @@
 * {
     font-family: Arial, Helvetica, sans-serif;
     background-color: rgb(0,0,0);
+    list-style-type:none;
 }
 
 #wrapper {
@@ -43,7 +44,7 @@ article {
 }
 
 aside li {
-    list-style: disc url('https://drive.google.com/uc?id=0B6Sg_ALpI1HFVDBlVEdsenV3ZHc');
+    list-style: none;
 }
 
 footer {
